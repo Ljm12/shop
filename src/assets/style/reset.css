@@ -46,3 +46,6 @@ html,body{
     height:100%;
     font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
+img {
+	width: 100%
+}
