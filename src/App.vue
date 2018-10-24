@@ -18,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style lang="stylus">
-@import '~@/assets/style/global.styl'
+
 </style>

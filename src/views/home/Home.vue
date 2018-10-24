@@ -1,12 +1,15 @@
 <template>
-    <div class="a">
-        <span class="iconfont arrow-icon">&#xe625;</span>
+    <div>
+        <home-header></home-header>
     </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
 export default {
-    
+    components: {
+        HomeHeader,
+    }
 }
 </script>
 
