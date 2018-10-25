@@ -1,9 +1,11 @@
 <template>
-    <div>
+    <div class="wrapper">
         <home-header></home-header>
         <home-swiper :bannerImg="bannerImg"></home-swiper>
         <div class="jg"></div>
         <home-popular :hotProducts="hotProducts"></home-popular>
+        <div class="jg"></div>
+        <home-find></home-find>
         <div class="jg"></div>
     </div>
 </template>
@@ -12,11 +14,13 @@
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomePopular from './components/Popular'
+import HomeFind from './components/Find'
 export default {
     components: {
         HomeHeader,
         HomeSwiper,
-        HomePopular 
+        HomePopular,
+        HomeFind
     },
     data () {
         return {
@@ -62,8 +66,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/assets/style/global.styl'
-@import '~@/assets/style/varibles.styl'
+.wrapper
+    font-size px2rem(12)
     .jg
         height 10px
         background #eee
