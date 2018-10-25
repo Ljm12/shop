@@ -5,7 +5,7 @@
         </div>
         <div class="inputbox">
             <span class="iconfont search-icon">&#xe632;</span>
-            手机配件大降价
+            手机优惠大酬宾
         </div>
         <div class="iconfont category-icon">
             &#xe672;

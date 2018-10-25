@@ -18,5 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style lang="stylus">
-
+@import '~@/assets/style/global.styl'
+@import '~@/assets/style/varibles.styl'
+  body
+    font-size px2rem(12)
 </style>
