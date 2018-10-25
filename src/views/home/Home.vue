@@ -92,6 +92,7 @@ export default {
 <style lang="stylus" scoped>
 .wrapper
     font-size px2rem(12)
+   
     .jg
         height 10px
         background #eee

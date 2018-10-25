@@ -7,10 +7,12 @@ import './assets/style/reset.css';
 import './assets/style/iconfont.css';
 import './assets/style/border.css';
 import 'swiper/dist/css/swiper.css'
-
+import { Tabbar, TabbarItem } from 'vant';
+import 'vant/lib/vant-css/index.css';
 
 Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper)
+Vue.use(Tabbar).use(TabbarItem);
 
 new Vue({
   router,

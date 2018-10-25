@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <div class="indextitle">
             精选好货
         </div>
@@ -37,6 +37,8 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/style/global.styl'
 @import '~@/assets/style/varibles.styl'
+.wrapper
+    padding-bottom 60px
     .indextitle
         indexTitle()
     .products
