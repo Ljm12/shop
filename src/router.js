@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/home/Home.vue";
 import Search from "./views/search/Search.vue";
 import ProductsList from "./views/productsList/ProductsList.vue"
+import Category from "./views/category/Category.vue"
 Vue.use(Router);
 
 export default new Router({
@@ -19,6 +20,10 @@ export default new Router({
       path: "/productsList",
       name: "productsList",
       component: ProductsList
+    },{
+      path: "/category",
+      name: "category",
+      component: Category
     }
     // {
     //   path: "/about",
