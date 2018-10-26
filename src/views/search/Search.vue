@@ -7,9 +7,9 @@
             <div class="inputbox">
                 <input type="text" placeholder="手机" v-model="inputValue">
             </div>
-            <div class=" btn-search">
+            <router-link tag="div" to="/productsList" class=" btn-search">
                 搜 索
-            </div>
+            </router-link>
         </div>
         <div class="hot-search">
             热搜
@@ -38,7 +38,6 @@ export default {
 @import '~@/assets/style/global.styl'
 @import '~@/assets/style/varibles.styl'
     .header
-      
         height $headerHeight
         font-size px2rem(12)
         display flex
@@ -67,7 +66,6 @@ export default {
         .btn-search
             font-size px2rem(14)
             color #999
-            
             padding px2rem(5) px2rem(5)
             border-radius px2rem(10)
     .hot-search

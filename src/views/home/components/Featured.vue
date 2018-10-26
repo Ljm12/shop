@@ -65,10 +65,7 @@ export default {
             .title
                 padding px2rem(8) px2rem(8) 0 px2rem(8)
                 line-height px2rem(18)
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                overflow: hidden;
+                ellipsisTwo()
             .price
                 color $priceRed
                 font-size px2rem(14)
