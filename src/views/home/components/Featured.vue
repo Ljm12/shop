@@ -39,6 +39,7 @@ export default {
 @import '~@/assets/style/varibles.styl'
 .wrapper
     padding-bottom 60px
+    font-size px2rem(12)
     .indextitle
         indexTitle()
     .products

@@ -1,12 +1,13 @@
 <template>
     <div class="header border-bottom">
+       
         <div class="iconfont return-icon">
             &#xe624;
         </div>
-        <div class="inputbox">
+        <router-link to="/search" class="inputbox">
             <span class="iconfont search-icon">&#xe632;</span>
             手机优惠大酬宾
-        </div>
+        </router-link>
         <div class="iconfont category-icon">
             &#xe672;
         </div>
@@ -15,7 +16,7 @@
 
 <script>
 export default {
-    
+    name:'HomeHeader'
 }
 </script>
 
@@ -42,7 +43,7 @@ export default {
             font-weight bold  
         .inputbox
             width 80%
-            background #ededed
+            background #f7f7f7
             line-height px2rem(30)
             border-radius px2rem(16)
             padding-left px2rem(10)

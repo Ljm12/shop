@@ -34,18 +34,18 @@ export default {
                 price:9999
             },{
                 id:'002',
-                imgurl:'//gw1.alicdn.com/bao/uploaded/i1/2616970884/O1CN011IOuaD1Qu6P1Er3_!!0-item_pic.jpg_210x210.jpg',
-                 productName:'ipone 8 plus',
+                imgurl:'//gw3.alicdn.com/bao/uploaded/i3/1917047079/TB1RxS.XpzqK1RjSZFzXXXjrpXa_!!0-item_pic.jpg_210x210.jpg',
+                 productName:'ipone 8 plus 64G',
                 price:9999
             },{
                 id:'003',
                 imgurl:'//gw3.alicdn.com/bao/uploaded/i3/1917047079/TB1RxS.XpzqK1RjSZFzXXXjrpXa_!!0-item_pic.jpg_210x210.jpg',
-                productName:'ipone 8 plus',
+                productName:'ipone 8 plus 64G',
                 price:9999
             },{
                 id:'004',
                 imgurl:'//gw1.alicdn.com/bao/uploaded/i1/2616970884/O1CN011IOuaD1Qu6P1Er3_!!0-item_pic.jpg_210x210.jpg',
-                productName:'ipone 8 plus',
+                productName:'ipone 8 plus 128G',
                 price:9999
             },{
                 id:'005',
@@ -90,12 +90,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.wrapper
-    font-size px2rem(12)
+
    
     .jg
         height 10px
-        background #eee
+        background #f7f7f7
         
 </style>
 

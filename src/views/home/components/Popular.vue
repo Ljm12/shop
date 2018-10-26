@@ -42,12 +42,12 @@ export default {
         .swiper-items
             padding-left px2rem(16)
             .item
-                width px2rem(105)
-                height px2rem(156)
+                width 30% !important
+                height 0
+                padding-bottom 44%
                 overflow hidden
                 .item-img
-                    width px2rem(105)
-                    height px2rem(105)
+                    width 100%
                     overflow hidden
                     background-color #eee
                 .item-desc
@@ -57,7 +57,7 @@ export default {
                         line-height px2rem(20)
                         ellipsis()
                     .price
-                        width px2rem(105)
+                        
                         font-size px2rem(14)
                         color $priceRed
                         text-align center  
