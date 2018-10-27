@@ -6,6 +6,9 @@
             </div>
             <div class="item-desc border-bottom">
                 <div class="title">{{item.title}}</div>
+                <ul class="sell-point">
+                    <li class="sell-item" v-for="childItem of item.sellpoint" :key="childItem.index">{{childItem}}</li>
+                </ul>
                 <div class="price">￥{{item.price}}</div>
             </div>
         </div>
@@ -52,6 +55,16 @@ export default {
                 justify-content space-between
                 .title
                     ellipsisTwo()
+                .sell-point
+                    display flex
+                    flex-wrap wrap
+                    .sell-item
+                        background #f2f2f2
+                        margin-right px2rem(10)
+                        font-size px2rem(10)
+                        padding px2rem(3) px2rem(6)
+                        border-radius px2rem(5) 
+                       
                 .price
                     color $priceRed
 </style>

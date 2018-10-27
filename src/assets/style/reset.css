@@ -16,8 +16,8 @@
   body {
       background: #fff;
       color: #555;
-      font-size: .24rem;
       font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+      height: 100%;
   }
   h1, h2, h3, h4, h5, h6 {
       font-weight: normal;

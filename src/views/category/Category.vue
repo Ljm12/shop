@@ -99,7 +99,13 @@ export default {
             this.show=index
             this.isactive=index
         }
-    }
+    },
+    // beforeCreate () {
+    //     document.querySelector('body').setAttribute('style', 'background-color:#f2f2f2')
+    // },
+    // beforeDestroy () {
+    //     document.querySelector('body').removeAttribute('style')
+    // }
 }
 </script>
 
@@ -109,18 +115,21 @@ export default {
     .tab
         margin-top px2rem(46)
         display flex
+        width 100%
+    
         .tab-items
-            height 100vh
-            width px2rem(100)
-            background #f7f7f7
+        
+            width px2rem(110)
+            background #fff
+           
             .tab-item
                 width px2rem(100)
                 line-height px2rem(30)
                 font-size px2rem(14)
-                background #f7f7f7
+                background #fff
                 text-align center
             .active
-                background #fff
+                background #f2f2f2
 
 </style>
 

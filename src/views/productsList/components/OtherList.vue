@@ -20,6 +20,17 @@ export default {
     name:'OtherList',
     props: {
         productsList:Array
+    },
+    data () {
+        return {
+            
+        }
+    },
+    beforeCreate () {
+        document.querySelector('body').setAttribute('style', 'background-color:#f2f2f2')
+    },
+    beforeDestroy () {
+        document.querySelector('body').removeAttribute('style')
     }
 }
 </script>
@@ -36,7 +47,7 @@ export default {
         margin-left 4%
         justify-items center
         .items
-            box-shadow 0 0 5px #ccc
+            background #fff
             border-radius px2rem(5)
             overflow hidden
             .item-img

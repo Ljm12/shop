@@ -4,6 +4,7 @@ import Home from "./views/home/Home.vue";
 import Search from "./views/search/Search.vue";
 import ProductsList from "./views/productsList/ProductsList.vue"
 import Category from "./views/category/Category.vue"
+import Mine from "./views/mine/Mine.vue"
 Vue.use(Router);
 
 export default new Router({
@@ -24,6 +25,10 @@ export default new Router({
       path: "/category",
       name: "category",
       component: Category
+    },{
+      path: "/mine",
+      name: "mine",
+      component: Mine
     }
     // {
     //   path: "/about",

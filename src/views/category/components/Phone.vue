@@ -45,12 +45,16 @@ export default {
 @import '~@/assets/style/varibles.styl'
     .title
         font-size px2rem(14)
-        color #000000
         font-weight bold
         padding px2rem(10)
     .grid
         display grid
         grid-template-columns 34% 33% 33%
+        background #fff
+        border-radius px2rem(10)
+        margin 0 px2rem(5)
+        padding 0 px2rem(5) px2rem(10) 0
+        box-shadow  0 0 px2rem(5) #ccc
         
         .item
             width 100%

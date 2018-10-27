@@ -2,10 +2,10 @@
   <div id="app">
     <router-view/>
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="shop">首页</van-tabbar-item>
-      <van-tabbar-item icon="wap-nav" >分类</van-tabbar-item>
+      <van-tabbar-item icon="shop" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="search" to="/category">分类</van-tabbar-item>
       <van-tabbar-item icon="cart" info="0">购物车</van-tabbar-item>
-      <van-tabbar-item icon="contact" >我的</van-tabbar-item>
+      <van-tabbar-item icon="contact" to="/mine">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -33,5 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 @import '~@/assets/style/global.styl'
 @import '~@/assets/style/varibles.styl'
   body
+    width 100%
+    height 100%
     font-size px2rem(12)
 </style>
