@@ -6,11 +6,9 @@
                 <li class="tab-item" :class="{active:isactive==index}" v-for="(item,index) of tabs" :key="index"
                     @click="tabChange(index)"
                 >{{item}}</li>
-                
             </ul>
             <category-phone v-show="show===0" :phoneBrand="phoneBrand" :phoneList="phoneList"></category-phone>
             <category-headset v-show="show===1" :earBrand="earBrand" :earList="earList"></category-headset>
-            
         </div>
     </div>
     

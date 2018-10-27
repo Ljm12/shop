@@ -51,7 +51,7 @@ export default {
             color  #999
             font-weight bold  
         .inputbox
-            width 81%
+            width 78%
             background #f7f7f7
             line-height px2rem(32)
             border-radius px2rem(16)

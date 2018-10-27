@@ -8,8 +8,8 @@
             <span class="iconfont search-icon">&#xe632;</span>
             手机
         </router-link>
-        <div class="btn-search">
-           搜索
+        <div class="btn-search" @click="tab">
+           切换
         </div>
     </div>
 </template>
@@ -20,6 +20,11 @@ export default {
     data () {
         return {
             inputValue:'手机'
+        }
+    },
+    methods: {
+        tab () {
+            this.$emit('tabchange')
         }
     }
 }
@@ -47,7 +52,7 @@ export default {
             color  #999
             font-weight bold  
         .inputbox
-            width 80%
+            width 78%
             background #f7f7f7
             line-height px2rem(30)
             border-radius px2rem(16)
