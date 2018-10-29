@@ -4,9 +4,13 @@
             &#xe624;
         </div>
         <product-swiper></product-swiper>
-        <product-desc @selectbox="selectbox"></product-desc>
+        <product-desc :price="defaultPrice" :info="info" @selectbox="selectbox"></product-desc>
         <van-actionsheet v-model="show" title="产品规格选择">
             <div class="product-box">
+                <div>
+                    <span class="unit">单价</span>
+                    <span class="price">￥{{defaultPrice}}</span>
+                </div>
                 <div class="product-content"  v-for="(ProductItem,n) in simulatedDATA.specifications">
                     <p>{{ProductItem.name}}</p>
                     <ul class="product-list">
@@ -14,7 +18,7 @@
                     </ul>
                 </div>
                 <div class="buy-btn" @click="submit">
-                    立即提交
+                    确定
                 </div>
             </div>
         </van-actionsheet>
@@ -40,36 +44,38 @@ export default {
     },
     data () {
         return {
-            message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',
-            show:false,
+            defaultPrice:'2000',//默认价格
+            info:"选择",
+            message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',//图文详情图片
+            show:false,//上拉菜单
             simulatedDATA: { //模拟后台返回的数据 多规格
             "difference": [{ //所有的规格可能情况都在这个数组里
                     "id": "19",
-                    "price": "200.00",
+                    "price": "1000.00",
                     "stock": "19",
                     "difference": "黑色,4G"
                 },
                 {
                     "id": "20",
-                    "price": "300.00",
+                    "price": "2000.00",
                     "stock": "29",
                     "difference": "红色,4G"
                 },
                 {
                     "id": "21",
-                    "price": "300.00",
+                    "price": "3000.00",
                     "stock": "10",
                     "difference": "黑色,6G"
                 },
                  {
                     "id": "22",
-                    "price": "300.00",
+                    "price": "4000.00",
                     "stock": "0",
                     "difference": "红色,6G"
                 },
                 {
                     "id": "23",
-                    "price": "500.00",
+                    "price": "5000.00",
                     "stock": "48",
                     "difference": "黑色,8G"
                 },
@@ -105,11 +111,12 @@ export default {
                     ]
                 }
             ],
-            message:"<h1>图文详情</h1>"
+           
         },
         selectArr: [], //存放被选中的值
         shopItemInfo: {}, //存放要和选中的值进行匹配的数据
         subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
+        b:""
         }
     },
     created () {
@@ -119,6 +126,7 @@ export default {
                 i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
         }
         self.checkItem();
+       
     },
     methods: {
         specificationBtn: function (item, n, event, index) {
@@ -132,6 +140,12 @@ export default {
                 self.subIndex[n] = -1; //去掉选中的颜色 
             }
             self.checkItem();
+            if(self.subIndex.length==2){
+               
+                self.info=self.shopItemInfo[self.b].difference
+                self.defaultPrice=self.shopItemInfo[self.b].price
+            }
+           
         },
         checkItem: function () {
             var self = this;
@@ -147,10 +161,16 @@ export default {
                     option[i].item[k].isShow = self.isMay(result); //在数据里面添加字段isShow来判断是否可以选择
                 }
                 result[i] = last; //还原，目的是记录点下去那个值，避免下一次执行循环时避免被覆盖
- 
+               
             }
             self.$forceUpdate(); //重绘
-            console.log(self.selectArr)
+            // console.log(self.shopItemInfo)
+             this.b=result.join(",")
+            // console.log(b)
+            // if(result.length == 2){
+            //     this.price=self.shopItemInfo[b].price
+            // }
+            
         },
         isMay (result) {
             for (var i in result) { 
@@ -193,6 +213,12 @@ export default {
         z-index 2000  
     .product-box
         color #666
+        .unit
+            padding px2rem(10)
+            font-size px2rem(14)
+        .price
+            color #ff4a52
+            font-size px2rem(14)
         .product-content
             border-bottom 1px solid #eee
             padding px2rem(10)
@@ -207,13 +233,13 @@ export default {
                 .noneActive
                     background #f2f2f2
                 .productActive
-                    background red
+                    background #FF0036
                     color #fff
         .buy-btn
             width 100%
             line-height px2rem(40)
             color #ffffff
-            background red
+            background #FF0036
             text-align center 
             font-size px2rem(14)
 

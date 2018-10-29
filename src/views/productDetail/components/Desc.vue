@@ -1,13 +1,13 @@
 <template>
     <div>
-        <div class="price">￥2499</div>
+        <div class="price">￥{{price}}</div>
         <div class="name">
             【全版本直降200元】Xiaomi/小米 小米8年度旗舰全面屏骁龙845双频GPS 智能拍照游戏手机 旗舰官方正品现货
         </div>
         <div class="jg"></div>
         <div class="select" @click="selectbox">
             <div class="title">规格</div>
-            <div class="info">选择机身颜色 内存...</div>
+            <div class="info">{{info}}...</div>
             <div class="iconfont">&#xe62d;</div>
         </div>
         <div class="select">
@@ -22,6 +22,10 @@
 
 <script>
 export default {
+    props: {
+        price:String,
+        info:String
+    },
     data () {
         return {
             
