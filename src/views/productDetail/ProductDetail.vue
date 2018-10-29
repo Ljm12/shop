@@ -4,6 +4,10 @@
         <product-desc @selectbox="selectbox"></product-desc>
         <van-actionsheet v-model="show" title="产品规格选择">
             <div class="product-box">
+                <div class="price-items">
+                    <span class="price-item">单价：</span>
+                     <span class="price">{{price}}</span>   
+                </div>
                 <div class="product-content"  v-for="(ProductItem,n) in simulatedDATA.specifications">
                     <p>{{ProductItem.name}}</p>
                     <ul class="product-list">
@@ -12,7 +16,7 @@
                 </div>
                 <div class="buy-btn" @click="submit">
                     立即提交
-                </div>
+                </div> 
             </div>
         </van-actionsheet>
         <graphic-details :message="message"></graphic-details>
@@ -37,6 +41,7 @@ export default {
     },
     data () {
         return {
+            price:'3000',
             message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',
             show:false,
             simulatedDATA: { //模拟后台返回的数据 多规格
@@ -175,6 +180,8 @@ export default {
 @import '~@/assets/style/global.styl'
     .product-box
         color #666
+        .price-items
+            paading-left px2rem(0)
         .product-content
             border-bottom 1px solid #eee
             padding px2rem(10)

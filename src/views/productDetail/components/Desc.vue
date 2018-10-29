@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="price">￥2499</div>
+        <div class="price">￥3000</div>
         <div class="name">
             【全版本直降200元】Xiaomi/小米 小米8年度旗舰全面屏骁龙845双频GPS 智能拍照游戏手机 旗舰官方正品现货
         </div>
