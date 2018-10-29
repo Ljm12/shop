@@ -91,9 +91,9 @@ export default {
 
 <style lang="stylus" scoped>
 
-   
+   @import '~@/assets/style/global.styl'
     .jg
-        height 10px
+        height px2rem(10)
         background #f7f7f7
         
 </style>

@@ -30,14 +30,8 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/style/global.styl'
     .wrapper
-        box-shadow 0 0 px2rem(4) #ccc
         background #fff
         border-radius px2rem(8) 
-        position absolute
-        top px2rem(100)
-        left px2rem(10)
-        right px2rem(10)
-        
         .title
             color #999
             display flex

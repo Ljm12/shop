@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="item" v-for="item of productsList" :key="item.id">
+        <router-link tag="div" :to="'/productDetail/'+item.id"  class="item" v-for="item of productsList" :key="item.id">
             <div class="item-img">
                 <img :src="item.imgurl">
             </div>
@@ -11,7 +11,7 @@
                 </ul>
                 <div class="price">￥{{item.price}}</div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
@@ -60,11 +60,10 @@ export default {
                     flex-wrap wrap
                     .sell-item
                         background #f2f2f2
-                        margin-right px2rem(10)
+                        margin px2rem(5)
                         font-size px2rem(10)
                         padding px2rem(3) px2rem(6)
                         border-radius px2rem(5) 
-                       
                 .price
                     color $priceRed
 </style>
