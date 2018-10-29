@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="iconfont header" @click="routerback">
+            &#xe624;
+        </div>
         <product-swiper></product-swiper>
         <product-desc @selectbox="selectbox"></product-desc>
         <van-actionsheet v-model="show" title="产品规格选择">
@@ -107,8 +110,6 @@ export default {
         selectArr: [], //存放被选中的值
         shopItemInfo: {}, //存放要和选中的值进行匹配的数据
         subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
-
-
         }
     },
     created () {
@@ -166,6 +167,9 @@ export default {
         },
         selectbox(){
             this.show=true
+        },
+        routerback(){
+            this.$router.go(-1);
         }
     }
 }
@@ -173,6 +177,20 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@/assets/style/global.styl'
+    .header
+        width px2rem(44)
+        height px2rem(44)
+        border-radius 50%
+        background rgba(0,0,0,0.6)
+        color #ffffff
+        font-size px2rem(18)
+        text-align center
+        line-height px2rem(44)
+        font-weight bold
+        position fixed
+        top px2rem(10)
+        left px2rem(10)
+        z-index 2000  
     .product-box
         color #666
         .product-content
