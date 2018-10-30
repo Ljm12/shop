@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
-        <div class="car" @click="selectbox">加入购物车</div>
-        <div class="buy"  @click="selectbox">立即购买</div>
+        <div class="car" @click="handleAdd">加入购物车</div>
+        <div class="buy"  @click="handleBuy">立即购买</div>
     </div>
 </template>
 
@@ -36,8 +36,11 @@ export default {
         }
     },
     methods: {
-        selectbox () {
-            this.$emit('selectbox')
+        handleAdd () {
+            this.$emit('handleAdd')
+        },
+        handleBuy (){
+            this.$emit('handleBuy')
         }
     }
 }

@@ -6,6 +6,7 @@ import ProductsList from "./views/productsList/ProductsList.vue"
 import Category from "./views/category/Category.vue"
 import Mine from "./views/mine/Mine.vue"
 import ProductDetail from "./views/productDetail/ProductDetail"
+import Car from "./views/car/Car"
 Vue.use(Router);
 
 export default new Router({
@@ -34,6 +35,10 @@ export default new Router({
       path: "/productDetail/:id",
       name: "productDetail",
       component: ProductDetail
+    },{
+      path: "/car",
+      name: "Car",
+      component: Car
     }
     // {
     //   path: "/about",

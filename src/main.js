@@ -8,13 +8,15 @@ import './assets/style/reset.css';
 import './assets/style/iconfont.css';
 import './assets/style/border.css';
 import 'swiper/dist/css/swiper.css'
-import { Tabbar, TabbarItem,Actionsheet } from 'vant';
+import { Tabbar, TabbarItem,Actionsheet ,Stepper,Checkbox} from 'vant';
 import 'vant/lib/vant-css/index.css';
 
 Vue.config.productionTip = false;
 Vue.use(VueAwesomeSwiper)
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(Actionsheet);
+Vue.use(Stepper);
+Vue.use(Checkbox)
 
 new Vue({
   router,

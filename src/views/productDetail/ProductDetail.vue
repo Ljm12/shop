@@ -10,6 +10,8 @@
                 <div>
                     <span class="unit">单价</span>
                     <span class="price">￥{{defaultPrice}}</span>
+                    <span class="unit">库存</span>
+                    <span >{{defaultstock}} </span>
                 </div>
                 <div class="product-content"  v-for="(ProductItem,n) in simulatedDATA.specifications">
                     <p>{{ProductItem.name}}</p>
@@ -17,13 +19,18 @@
                         <li v-for="(oItem,index) in ProductItem.item" v-on:click="specificationBtn(oItem.name,n,$event,index)" v-bind:class="[oItem.isShow?'':'noneActive',subIndex[n] == index?'productActive':'']">{{oItem.name}}</li>
                     </ul>
                 </div>
+                <p class="unit">数量</p>
+                <div class="stepper">
+                    <van-stepper  v-model="value" integer :min="1" :max="defaultstock"/>
+                </div>
+                
                 <div class="buy-btn" @click="submit">
                     确定
                 </div>
             </div>
         </van-actionsheet>
         <graphic-details :message="message"></graphic-details>
-        <product-footer @selectbox="selectbox"></product-footer>
+        <product-footer @handleAdd="handleAdd" @handleBuy="handleBuy"></product-footer>
     </div>
 </template>
 
@@ -33,6 +40,9 @@ import ProductDesc from "./components/Desc"
 import ProductGuige from "./components/Guige"
 import GraphicDetails from "./components/GraphicDetails"
 import ProductFooter from "./components/Footer.vue"
+import { Toast } from 'vant'
+import Vue from "vue"
+Vue.use(Toast);
 export default {
     name: "ProductDetail",
     components: {
@@ -44,8 +54,10 @@ export default {
     },
     data () {
         return {
+            value:1,
+            defaultstock:'0',//默认库存
             defaultPrice:'2000',//默认价格
-            info:"选择",
+            info:"",
             message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',//图文详情图片
             show:false,//上拉菜单
             simulatedDATA: { //模拟后台返回的数据 多规格
@@ -70,7 +82,7 @@ export default {
                  {
                     "id": "22",
                     "price": "4000.00",
-                    "stock": "0",
+                    "stock": "30",
                     "difference": "红色,6G"
                 },
                 {
@@ -82,7 +94,7 @@ export default {
                 {
                     "id": "24",
                     "price": "500.00",
-                    "stock": "0",
+                    "stock": "50",
                     "difference": "红色,8G"
                 }
             ],
@@ -116,7 +128,7 @@ export default {
         selectArr: [], //存放被选中的值
         shopItemInfo: {}, //存放要和选中的值进行匹配的数据
         subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
-        b:""
+        b:"" //存放选中的difference
         }
     },
     created () {
@@ -141,9 +153,9 @@ export default {
             }
             self.checkItem();
             if(self.subIndex.length==2){
-               
                 self.info=self.shopItemInfo[self.b].difference
                 self.defaultPrice=self.shopItemInfo[self.b].price
+                self.defaultstock=self.shopItemInfo[self.b].stock
             }
            
         },
@@ -190,6 +202,20 @@ export default {
         },
         routerback(){
             this.$router.go(-1);
+        },
+        handleAdd (){
+            if(this.info.length == 0 ){
+                this.show=true
+            }else{
+                Toast('已成功加入购物车');
+            }
+        },
+        handleBuy (){
+            if(this.info.length == 0 ){
+                this.show=true
+            }else{
+              
+            }
         }
     }
 }
@@ -213,6 +239,7 @@ export default {
         z-index 2000  
     .product-box
         color #666
+        padding-top px2rem(8)
         .unit
             padding px2rem(10)
             font-size px2rem(14)
@@ -235,6 +262,9 @@ export default {
                 .productActive
                     background #FF0036
                     color #fff
+        .stepper
+            padding-left px2rem(10)
+            padding-bottom px2rem(10)
         .buy-btn
             width 100%
             line-height px2rem(40)
@@ -242,5 +272,6 @@ export default {
             background #FF0036
             text-align center 
             font-size px2rem(14)
+        
 
 </style>
