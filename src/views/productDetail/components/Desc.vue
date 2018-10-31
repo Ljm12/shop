@@ -7,7 +7,7 @@
         <div class="jg"></div>
         <div class="select" @click="selectbox">
             <div class="title">规格</div>
-            <div class="info">{{info}}...</div>
+            <div class="info"> {{'选择 '+ info}}</div>
             <div class="iconfont">&#xe62d;</div>
         </div>
         <div class="select">
@@ -24,7 +24,8 @@
 export default {
     props: {
         price:String,
-        info:String
+        info:String,
+        title:String
     },
     data () {
         return {

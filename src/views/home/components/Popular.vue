@@ -3,9 +3,9 @@
         <div class="title">热销推荐</div>
         <swiper :options="swiperOption" class="swiper-items">
             <swiper-slide class="item" v-for="item of hotProducts" :key="item.id">
-                <div class="item-img">
+                <router-link tag="div" to="/productsList" class="item-img">
                     <img :src="item.imgurl" alt="">
-                </div>
+                </router-link>
                 <div class="item-desc">
                     <p class="name">{{item.productName}}</p>
                     <p class="price">￥{{item.price}}</p>

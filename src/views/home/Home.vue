@@ -85,6 +85,9 @@ export default {
                 price:2799
             }]
         }
+    },
+    mounted () {
+       
     }
 }
 </script>

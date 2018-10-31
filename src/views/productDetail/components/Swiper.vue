@@ -11,6 +11,9 @@
 <script>
 export default {
     name:"ProductSwiper" ,
+    props: {
+        productSwiper:Array
+    },
     data () {
         return {
              swiperOption: {
@@ -19,12 +22,8 @@ export default {
                     type: 'fraction'
                 }
               
-            },
-            productSwiper:[
-                "//img.alicdn.com/imgextra/i1/1714128138/O1CN0129zFeD62zVKwBT1_!!0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
-                "//img.alicdn.com/imgextra/i2/1714128138/TB2fHtMFFuWBuNjSszbXXcS7FXa_!!1714128138-0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
-                "//img.alicdn.com/imgextra/i4/1714128138/TB2YBWWoiOYBuNjSsD4XXbSkFXa_!!1714128138.jpg_2200x2200Q50s50.jpg_.webp"
-            ]
+            }
+            
             
         }
     },

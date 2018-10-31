@@ -10,7 +10,7 @@
                     <img :src="item.imgurl" alt="">
                 </div>
                 <div class="item-desc">
-                    <p>{{item.name}}</p> 
+                    <p class="title">{{item.name}}</p> 
                     <ul class="info">
                         <li>{{item.difference}}</li>
                         <li>
@@ -23,10 +23,10 @@
         </div>
         <div class="footer">
             <div class="count">
-                总计 <span>￥0.00</span>
+                总计 <span>￥{{sum}}</span>
             </div>
             <div class="submit">
-                结算(2)
+                结算({{this.$store.state.productList.length}})
             </div>
         </div>
     </div>
@@ -34,6 +34,7 @@
 
 <script>
 import empty from "@/assets/img/empty.jpg"
+import { mapGetters } from 'vuex'
 export default {
     name:'CarList',
     props: {
@@ -44,6 +45,9 @@ export default {
             empty:empty,
             checked:true,
         }
+    },
+    computed: {
+        ...mapGetters(['sum'])
     }
 }
 </script>
@@ -67,6 +71,8 @@ export default {
         .item-desc
             width 68%
             padding-left 2%
+            .title
+                ellipsisTwo()
             .info
                 color #999
                 line-height px2rem(24)

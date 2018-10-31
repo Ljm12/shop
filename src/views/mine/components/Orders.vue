@@ -1,9 +1,9 @@
 <template>
     <div class="wrapper">
-        <div class="title border-bottom">
+        <router-link tag="div" to="/orders" class="title border-bottom">
             <div class="tit-left">我的订单</div>
             <div class="tit-right">查看全部订单 <span class="iconfont icont-jt">&#xe62d;</span> </div>
-        </div>
+        </router-link>
         <ul class="items">
             <li>
                 <span class="iconfont">&#xe6d0;</span>

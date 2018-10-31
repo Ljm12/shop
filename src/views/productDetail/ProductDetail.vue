@@ -3,8 +3,8 @@
         <div class="iconfont header" @click="routerback">
             &#xe624;
         </div>
-        <product-swiper></product-swiper>
-        <product-desc :price="defaultPrice" :info="info" @selectbox="selectbox"></product-desc>
+        <product-swiper :productSwiper="productSwiper"></product-swiper>
+        <product-desc :price="defaultPrice" :info="info" :title="title" @selectbox="selectbox"></product-desc>
         <van-actionsheet v-model="show" title="产品规格选择">
             <div class="product-box">
                 <div>
@@ -40,6 +40,7 @@ import ProductDesc from "./components/Desc"
 import ProductGuige from "./components/Guige"
 import GraphicDetails from "./components/GraphicDetails"
 import ProductFooter from "./components/Footer.vue"
+import {  mapMutations } from 'vuex'
 import { Toast } from 'vant'
 import Vue from "vue"
 Vue.use(Toast);
@@ -54,6 +55,12 @@ export default {
     },
     data () {
         return {
+            title:"【全版本直降200元】Xiaomi/小米 小米8年度旗舰全面屏骁龙845双频GPS 智能拍照游戏手机 旗舰官方正品现货",
+            productSwiper:[
+                "//img.alicdn.com/imgextra/i1/1714128138/O1CN0129zFeD62zVKwBT1_!!0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
+                "//img.alicdn.com/imgextra/i2/1714128138/TB2fHtMFFuWBuNjSszbXXcS7FXa_!!1714128138-0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
+                "//img.alicdn.com/imgextra/i4/1714128138/TB2YBWWoiOYBuNjSsD4XXbSkFXa_!!1714128138.jpg_2200x2200Q50s50.jpg_.webp"
+            ],
             value:1,
             defaultstock:'0',//默认库存
             defaultPrice:'2000',//默认价格
@@ -205,18 +212,32 @@ export default {
         },
         handleAdd (){
             if(this.info.length == 0 ){
-                this.show=true
+                Toast('请选择规格')
             }else{
-                Toast('已成功加入购物车');
+                Toast('已成功加入购物车')
+                var data={
+                    id:"003",
+                    checked:true,
+                    imgurl:this.productSwiper[0],
+                    name:this.title,
+                    price:this.defaultPrice,
+                    difference:this.info,
+                    number:this.value,
+                }
+                this.addProduct(data)
+                console.log(this.$store.state.productList)
             }
         },
         handleBuy (){
             if(this.info.length == 0 ){
-                this.show=true
+                Toast('请选择规格')
             }else{
               
             }
-        }
+            
+            
+        },
+         ...mapMutations(['addProduct']) 
     }
 }
 </script>

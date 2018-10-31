@@ -1,8 +1,8 @@
 <template>
     <div> 
         <car-header @tabview="tabview" @selectAll="selectAll"></car-header>
-        <car-list v-show="show" :carList="carList"></car-list>
-        <edit-list v-show="!show" :carList="carList" @delete="handleDelete" @allDelete="allDelete"></edit-list>
+        <car-list v-show="show" :carList="productList"></car-list>
+        <edit-list v-show="!show" :carList="productList" @delete="handleDelete" @allDelete="allDelete"></edit-list>
     </div>
 </template>
 
@@ -12,6 +12,7 @@ import CarList from "./components/List"
 import EditList from "./components/EditList"
 import { Dialog } from 'vant'
 import Vue from "vue"
+import { mapState,mapMutations} from 'vuex'
 Vue.use(Dialog);
 export default {
     components: {
@@ -21,25 +22,11 @@ export default {
     },
     data () {
         return {
-            show: true,
-            carList:[{
-                id:"001",
-                checked:true,
-                imgurl:"//img10.360buyimg.com/n7/jfs/t20140/279/2633113298/113707/57d9da77/5b6018c5N6f80495e.jpg!q70.dpg",
-                name:"荣耀Note10 全网通6G+64G 幻夜黑 移动联通电信4G全面屏手机 双卡双待 游戏手机",
-                difference:"黑色,4G",
-                price:'2499.00',
-                number:1
-            },{
-                id:"002",
-                checked:true,
-                imgurl:"//img10.360buyimg.com/n7/jfs/t20140/279/2633113298/113707/57d9da77/5b6018c5N6f80495e.jpg!q70.dpg",
-                difference:"黑色,4G",
-                name:"荣耀Note10 全网通6G+64G 幻夜黑 移动联通电信4G全面屏手机 双卡双待 游戏手机",
-                price:'2499.00',
-                number:1
-            }]
+            show: true
         }
+    },
+    computed: {
+        ...mapState(['productList'])  
     },
     methods: {
         tabview(){
@@ -50,7 +37,7 @@ export default {
                 title: '标题',
                 message: '确定删除该商品吗'
                 }).then(() => {
-                    this.carList.splice(index,1)
+                    this.deleteProduct(index)
                 // on confirm
                 }).catch(() => {
                 // on cancel
@@ -63,14 +50,15 @@ export default {
         },
         selectAll(check){
             
-            for (var i in this.carList){
+            for (var i in this.productList){
                 if(check==true){
-                     this.carList[i].checked=true
+                     this.productList[i].checked=true
                 }else{
-                    this.carList[i].checked=false
+                    this.productList[i].checked=false
                 }
             }
-        }
+        },
+        ...mapMutations(['deleteProduct'])
     }
 }
 </script>

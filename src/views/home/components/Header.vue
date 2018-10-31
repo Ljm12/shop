@@ -8,9 +8,9 @@
             <span class="iconfont search-icon">&#xe632;</span>
             手机优惠大酬宾
         </router-link>
-        <div class="iconfont category-icon">
+        <router-link tag="div" to="/category" class="iconfont category-icon">
             &#xe672;
-        </div>
+        </router-link>
     </div>
 </template>
 
