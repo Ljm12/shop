@@ -36,7 +36,7 @@ export default {
             color #999
             display flex
             justify-content space-between
-            padding px2rem(10) 
+            padding px2rem(10) px2rem(18)
             .tit-left
                 color #000
                 font-size px2rem(14)
