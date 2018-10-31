@@ -33,7 +33,7 @@ export default {
 @import '~@/assets/style/global.styl'
 @import '~@/assets/style/varibles.styl'
 .box
-    height px2rem(139)
+    height px2rem(98)
     background #017cc9
     .wrapper
         height px2rem(105)
@@ -43,6 +43,7 @@ export default {
         justify-content space-between
         padding 0 px2rem(18)
         align-items center
+        padding-bottom px2rem(8)
         .tximg
             border 2px solid #08b8f9
             width px2rem(64)

@@ -2,9 +2,7 @@
     <div >
         <mine-header></mine-header>
         <mine-orders></mine-orders>
-        <div>
-            11
-        </div>
+        
     </div>        
 </template>
 

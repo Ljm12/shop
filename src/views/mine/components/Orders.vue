@@ -31,7 +31,7 @@ export default {
 @import '~@/assets/style/global.styl'
     .wrapper
         background #fff
-        border-radius px2rem(8) 
+        border-radius px2rem(12) 
         .title
             color #999
             display flex

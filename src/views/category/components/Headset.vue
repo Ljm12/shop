@@ -54,7 +54,8 @@ export default {
         border-radius px2rem(10)
         margin 0 px2rem(5)
         padding 0 px2rem(5) px2rem(10) 0
-        box-shadow  0 0 px2rem(5) #ccc
+        // box-shadow  0 0 px2rem(5) #ccc
+        
         .item
             width 100%
             padding-left px2rem(16)

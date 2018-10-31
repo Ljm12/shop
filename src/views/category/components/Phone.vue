@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="title">精选品牌</p>
-        <div class="grid"> 
+        <div class="grid" > 
             <div class="item" v-for="item of phoneBrand" :key="item.id">
                 <div class="item-img" >
                     <img :src="item.imgurl" alt="">
@@ -51,11 +51,11 @@ export default {
         display grid
         grid-template-columns 34% 33% 33%
         background #fff
-        border-radius px2rem(10)
+       
         margin 0 px2rem(5)
         padding 0 px2rem(5) px2rem(10) 0
-        box-shadow  0 0 px2rem(5) #ccc
-        
+        // box-shadow  0 0 px2rem(5) #ccc
+       
         .item
             width 100%
             padding-left px2rem(16)
