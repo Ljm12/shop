@@ -1,0 +1,51 @@
+{
+    "tabs":["手机","耳机"],
+    "phoneBrand":[{
+        "id":"001",
+        "imgurl":"img/apple.jpg",
+        "name":"phone"
+    },{
+        "id":"002",
+        "imgurl":"img/apple.jpg",
+        "name":"phone"
+    },{
+        "id":"003",
+        "imgurl":"img/apple.jpg",
+        "name":"phone"
+    },{
+        "id":"004",
+        "imgurl":"img/apple.jpg",
+        "name":"phone"
+    },{
+        "id":"005",
+        "imgurl":"img/apple.jpg",
+        "name":"phone"
+    }],
+    "phoneList":[{
+        "id":"001",
+        "imgurl":"img/iphone.jpg",
+        "name":"iphone 6s"
+    },{
+        "id":"002",
+        "imgurl":"img/iphone.jpg",
+        "name":"iphone 6s"
+    },{
+        "id":"003",
+        "imgurl":"img/iphone.jpg",
+        "name":"iphone 6s"
+    }],
+    "earBrand":[{
+        "id":"001",
+        "imgurl":"img/beats.jpg",
+        "name":"beats"
+    },{
+        "id":"002",
+        "imgurl":"img/beats.jpg",
+        "name":"beats"
+    },{
+        "id":"003",
+        "imgurl":"img/beats.jpg",
+        "name":"beats"
+    }],
+    "earList":[]
+}

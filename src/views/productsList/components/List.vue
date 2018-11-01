@@ -36,6 +36,7 @@ export default {
         margin-top px2rem(50)
         display flex
         flex-wrap wrap
+        margin-bottom 55px
         .item
             width 100%
             display flex

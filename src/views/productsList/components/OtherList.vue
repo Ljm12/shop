@@ -46,6 +46,7 @@ export default {
         grid-row-gap: 15px;
         margin-left 4%
         justify-items center
+        margin-bottom 55px
         .items
             background #fff
             border-radius px2rem(5)
