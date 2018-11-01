@@ -1,0 +1,71 @@
+{
+    "title":"【全版本直降200元】Xiaomi/小米 小米8年度旗舰全面屏骁龙845双频GPS 智能拍照游戏手机 旗舰官方正品现货",
+    "productSwiper":[
+        "//img.alicdn.com/imgextra/i1/1714128138/O1CN0129zFeD62zVKwBT1_!!0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
+        "//img.alicdn.com/imgextra/i2/1714128138/TB2fHtMFFuWBuNjSszbXXcS7FXa_!!1714128138-0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
+        "//img.alicdn.com/imgextra/i4/1714128138/TB2YBWWoiOYBuNjSsD4XXbSkFXa_!!1714128138.jpg_2200x2200Q50s50.jpg_.webp"
+    ],
+    "difference": [{ 
+            "id": "19",
+            "price": "1000.00",
+            "stock": "0",
+            "difference": "黑色,4G"
+        },
+        {
+            "id": "20",
+            "price": "2000.00",
+            "stock": "29",
+            "difference": "红色,4G"
+        },
+        {
+            "id": "21",
+            "price": "3000.00",
+            "stock": "10",
+            "difference": "黑色,6G"
+        },
+            {
+            "id": "22",
+            "price": "4000.00",
+            "stock": "30",
+            "difference": "红色,6G"
+        },
+        {
+            "id": "23",
+            "price": "5000.00",
+            "stock": "48",
+            "difference": "黑色,8G"
+        },
+        {
+            "id": "24",
+            "price": "500.00",
+            "stock": "50",
+            "difference": "红色,8G"
+        }
+    ],
+    "specifications": [{ 
+            "name": "颜色",
+            "item": [{
+                    "name": "黑色"
+                },
+                {
+                    "name": "红色"
+                }
+            ]
+            
+        },
+        {
+            "name": "机身内存",
+            "item": [{
+                    "name": "4G"
+                },
+                {
+                    "name": "6G"
+                },
+                {
+                    "name": "8G"
+                }
+            ]
+        }
+    ]
+    
+}

@@ -43,6 +43,7 @@ import ProductFooter from "./components/Footer.vue"
 import {  mapMutations } from 'vuex'
 import { Toast } from 'vant'
 import Vue from "vue"
+import axios from "axios"
 Vue.use(Toast);
 export default {
     name: "ProductDetail",
@@ -55,82 +56,17 @@ export default {
     },
     data () {
         return {
-            title:"【全版本直降200元】Xiaomi/小米 小米8年度旗舰全面屏骁龙845双频GPS 智能拍照游戏手机 旗舰官方正品现货",
-            productSwiper:[
-                "//img.alicdn.com/imgextra/i1/1714128138/O1CN0129zFeD62zVKwBT1_!!0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
-                "//img.alicdn.com/imgextra/i2/1714128138/TB2fHtMFFuWBuNjSszbXXcS7FXa_!!1714128138-0-item_pic.jpg_2200x2200Q50s50.jpg_.webp",
-                "//img.alicdn.com/imgextra/i4/1714128138/TB2YBWWoiOYBuNjSsD4XXbSkFXa_!!1714128138.jpg_2200x2200Q50s50.jpg_.webp"
-            ],
+            title:"",
+            productSwiper:[],
             value:1,
             defaultstock:'0',//默认库存
-            defaultPrice:'2000',//默认价格
+            defaultPrice:'请选择规格',//默认价格
             info:"",
             message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',//图文详情图片
             show:false,//上拉菜单
             simulatedDATA: { //模拟后台返回的数据 多规格
-            "difference": [{ //所有的规格可能情况都在这个数组里
-                    "id": "19",
-                    "price": "1000.00",
-                    "stock": "19",
-                    "difference": "黑色,4G"
-                },
-                {
-                    "id": "20",
-                    "price": "2000.00",
-                    "stock": "29",
-                    "difference": "红色,4G"
-                },
-                {
-                    "id": "21",
-                    "price": "3000.00",
-                    "stock": "10",
-                    "difference": "黑色,6G"
-                },
-                 {
-                    "id": "22",
-                    "price": "4000.00",
-                    "stock": "30",
-                    "difference": "红色,6G"
-                },
-                {
-                    "id": "23",
-                    "price": "5000.00",
-                    "stock": "48",
-                    "difference": "黑色,8G"
-                },
-                {
-                    "id": "24",
-                    "price": "500.00",
-                    "stock": "50",
-                    "difference": "红色,8G"
-                }
-            ],
-            "specifications": [{ //这里是要被渲染字段
-                    "name": "颜色",
-                    "item": [{
-                            "name": "黑色",
-                        },
-                        {
-                            "name": "红色",
-                        }
-                    ]
-                   
-                },
-                {
-                    "name": "机身内存",
-                    "item": [{
-                            "name": "4G",
-                        },
-                        {
-                            "name": "6G",
-                        },
-                        {
-                            "name": "8G",
-                        }
-                    ]
-                }
-            ],
-           
+            difference: [],
+            specifications: []
         },
         selectArr: [], //存放被选中的值
         shopItemInfo: {}, //存放要和选中的值进行匹配的数据
@@ -138,14 +74,36 @@ export default {
         b:"" //存放选中的difference
         }
     },
+    mounted () {
+        
+    },
     created () {
-        var self = this;
-        for (var i in self.simulatedDATA.difference) {
-            self.shopItemInfo[self.simulatedDATA.difference[i].difference] = self.simulatedDATA.difference[
-                i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
-        }
-        self.checkItem();
-       
+        axios.get("/mock/productDetail.json").then(res=>{
+                var self = this;
+                let data = res.data
+                self.productSwiper=data.productSwiper
+                self.title = data.title
+                self.simulatedDATA.difference = data.difference
+                self.simulatedDATA.specifications = data.specifications
+                self.$nextTick(()=>{
+                     for (var i in self.simulatedDATA.difference) {
+                        self.shopItemInfo[self.simulatedDATA.difference[i].difference] = self.simulatedDATA.difference[
+                            i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
+                    }
+                    self.checkItem();
+                })
+               
+                // console.log(self.simulatedDATA.difference)
+            })
+
+        //    *
+        // this.getProductDetail()
+        // for (var i in self.simulatedDATA.difference) {
+        //     self.shopItemInfo[self.simulatedDATA.difference[i].difference] = self.simulatedDATA.difference[
+        //         i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
+        // }
+        // self.checkItem();
+        // console.log(self.simulatedDATA.difference)
     },
     methods: {
         specificationBtn: function (item, n, event, index) {
@@ -197,8 +155,8 @@ export default {
                     return true; //如果数组里有为空的值，那直接返回true
                 }
             }
-          
              return this.shopItemInfo[result].stock == 0 ? false : true; //匹配选中的数据的库存，若不为空返回true反之返回false
+             
         },
 
         submit(){
@@ -225,7 +183,7 @@ export default {
                     number:this.value,
                 }
                 this.addProduct(data)
-                console.log(this.$store.state.productList)
+               
             }
         },
         handleBuy (){
@@ -279,7 +237,7 @@ export default {
                     border-radius px2rem(5) 
                     margin px2rem(5) px2rem(10)
                 .noneActive
-                    background #f2f2f2
+                    background #ccc
                 .productActive
                     background #FF0036
                     color #fff
