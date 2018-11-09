@@ -65,8 +65,8 @@ export default {
             message:'<img src="//img.alicdn.com/imgextra/i3/1714128138/TB2XMI2miCYBuNkSnaVXXcMsVXa_!!1714128138.jpg_760x760Q50s50.jpg_.webp">',//图文详情图片
             show:false,//上拉菜单
             simulatedDATA: { //模拟后台返回的数据 多规格
-            difference: [],
-            specifications: []
+            difference: [],//存储所有的可能
+            specifications: []//渲染的规格
         },
         selectArr: [], //存放被选中的值
         shopItemInfo: {}, //存放要和选中的值进行匹配的数据

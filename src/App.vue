@@ -20,6 +20,8 @@ export default {
     }
   }
 }
+
+// 初始化 html font-size
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.querySelector('html')
   let fontSize = window.innerWidth / 10 

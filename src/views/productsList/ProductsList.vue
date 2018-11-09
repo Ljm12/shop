@@ -1,7 +1,7 @@
 <template>
     <div>
         <product-header @tabchange="tab"></product-header>
-        <product-list v-if="show" :productsList="productsList"></product-list>
+        <product-list v-if="show" :productsList="productsList" ></product-list>
         <other-list v-else :productsList="productsList"></other-list>
     </div>
 </template>
