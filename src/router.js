@@ -44,6 +44,22 @@ export default new Router({
       path: "/orders",
       name: "Orders",
       component: Orders
+    },{
+      path: "/addressList",
+      name: "AddressList",
+      component: () => import("@/views/addressList/AddressList"),
+      meta: { 
+          title:'商品列表',
+          keepAlive:true
+       }
+    },{
+      path: "/addressEdit/:id",
+      name: "AddressEdit",
+      component: () => import("@/views/addressList/AddressEdit")
+    },{
+      path: "/addressAdd",
+      name: "AddressAdd",
+      component: () => import("@/views/addressList/AddressAdd")
     }
     // {
     //   path: "/about",

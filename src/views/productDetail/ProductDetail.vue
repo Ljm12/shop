@@ -237,7 +237,8 @@ export default {
                     border-radius px2rem(5) 
                     margin px2rem(5) px2rem(10)
                 .noneActive
-                    background #ccc
+                    background #ccc !important
+                    color #333 !important
                 .productActive
                     background #FF0036
                     color #fff

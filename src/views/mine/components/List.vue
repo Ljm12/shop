@@ -1,6 +1,10 @@
 <template>
     <div>
         <div class="jg"></div>
+        <router-link tag="div" to="/addresslist" class="item">
+            <div class="left">收货地址</div>
+            <div class="right iconfont">&#xe62d;</div>
+        </router-link>
         <div class="item">
             <div class="left">我的资产</div>
             <div class="right iconfont">&#xe62d;</div>
